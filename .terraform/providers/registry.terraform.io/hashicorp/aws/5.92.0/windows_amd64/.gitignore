@@ -1,5 +1,12 @@
-# Ignore Terraform state and lock files
+# Ignore Terraform state files
 *.tfstate
 *.tfstate.backup
+
+# Ignore Terraform lock file
 .terraform.lock.hcl
-.image2.JPG
+
+# Ignore Terraform working directory
+.terraform/
+
+# Ignore specific image file
+image2.JPG
