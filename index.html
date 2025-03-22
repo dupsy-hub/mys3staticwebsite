@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dupsy's Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* General Styles */
+      body {
+        font-family: "Arial", sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        color: #333;
+      }
+      header {
+        background: linear-gradient(135deg, #4caf50, #2e7d32);
+        color: white;
+        padding: 20px;
+        animation: slideDown 1.5s ease-in-out;
+      }
+
+      h1,
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      /* Image Styling */
+      .image-container {
+        margin: 20px auto;
+        text-align: center;
+      }
+      .image-container img {
+        width: 150px;
+        height: 200px;
+        border-radius: 50%;
+        border: 5px solid white;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        object-fit: cover;
+        animation: bounceIn 1.5s ease-in-out;
+      }
+
+      /* Sections */
+      section {
+        padding: 20px;
+      }
+
+      /* Project & Review Cards */
+      .project,
+      .review {
+        background: white;
+        margin: 20px auto;
+        padding: 15px;
+        width: 80%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+
+      .project:hover,
+      .review:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Animations */
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 1.5s forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes bounceIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.3);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 5px #fff;
+        }
+        50% {
+          text-shadow: 0 0 20px #ffd700;
+        }
+        100% {
+          text-shadow: 0 0 5px #fff;
+        }
+      }
+
+      h1 {
+        animation: glow 2s infinite alternate;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="fade-in">Welcome to Dupsy's Portfolio</h1>
+      <p class="fade-in">Showcasing my projects and client reviews</p>
+    </header>
+
+    <div class="image-container fade-in">
+      <img
+        src="https://dupsyterraformwebsite.s3.us-east-1.amazonaws.com/image2.JPG"
+        alt="Portfolio Image"
+      />
+    </div>
+
+    <section id="projects">
+      <h2 class="fade-in">Projects</h2>
+      <div class="project fade-in">
+        <h3>Cloud Infrastructure Automation</h3>
+        <p>
+          Designed and deployed a scalable AWS infrastructure using Terraform
+          and Ansible.
+        </p>
+      </div>
+      <div class="project fade-in">
+        <h3>CI/CD Pipeline Setup</h3>
+        <p>
+          Implemented Jenkins-based CI/CD pipelines for automated deployments.
+        </p>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <h2 class="fade-in">Client Reviews</h2>
+      <div class="review fade-in">
+        <p>
+          "Dupsy's expertise in DevOps is exceptional. Our cloud infrastructure
+          is now fully automated!" - Client A
+        </p>
+      </div>
+      <div class="review fade-in">
+        <p>
+          "Professional and efficient! Dupsy transformed our deployment
+          process." - Client B
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
