@@ -1,14 +1,45 @@
-Set Up a Static Website Hosting on AWS S3 Bucket
+🚀 Set Up Static Website Hosting on AWS S3 Using Terraform
+🧰 Prerequisites
+An active AWS account
+Terraform installed on your local machine
 
-Prerequisite:
-1.	AWS account
-2.	Terraform installed
+📁 Project Structure
+bash
+Copy
+Edit
+.
+├── .gitignore              # Ignore Terraform state files and credentials
+├── README.md               # Project documentation
+├── error.html              # Custom error page
+├── index.html              # Main static site page
+├── main.tf                 # Main Terraform config to create S3 bucket and settings
+├── outputs.tf              # Outputs S3 website URL
+├── provider.tf             # AWS provider configuration
+├── variables.tf            # Input variables
 
-Steps:
-1.	Create an S3 bucket: Start by creating an s3 Bucket to store your website files. The bucket name should be globally unique across all AWS accounts
-2.	Configure Bucket for Static Website Hosting: In the s3 bucket properties, enable static website and specify the default index document (e.g., index.html) and optional error document (e.g., error.html)
-3.	Upload Website Files:  Upload your static website files (HTML, CSS, JS images etc.) to the s3 bucket, setting up appropriate permissions e.g., public-read, for objects to be publicly accessible.
-4.	Enable Public Access: Allow public access to the s3 bucket and its objects by configuring the bucket policy and ACLs.
-5.	Testing the Website: Once the setup is done., you can test the website by accessing it through s3 bucket website URL or your custom domain.
+📋 Overview
+This project automates the setup of a static website hosted on AWS S3 using Terraform. It includes bucket creation, website hosting configuration, access settings, and file upload instructions.
 
-The above steps will be automated using Terraform.
+🛠️ Steps
+Create an S3 Bucket
+Terraform will create an S3 bucket with a globally unique name to host your website files.
+
+Configure for Static Website Hosting
+The bucket will be configured to host a static website by enabling the feature and specifying:
+
+index.html as the default document
+
+(Optional) error.html for error handling
+
+Upload Website Files
+Upload your static assets (HTML, CSS, JS, images) to the S3 bucket. Files will be made publicly accessible using proper ACLs or bucket policies.
+
+Enable Public Access
+A bucket policy will be applied to allow public read access so users can view your site without authentication.
+
+Test the Website
+Access your hosted site via the S3 static website endpoint or configure a custom domain using Route 53 (optional).
+
+🚀 Bonus
+This entire setup — including bucket creation, website configuration, and permissions — is managed with Terraform, allowing for fast deployment and easy teardown.
+
